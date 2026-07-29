@@ -1,4 +1,4 @@
-package com.example.prestamos_personales
+package com.prestamosrapidoscolombia.daviidrusell
 
 import io.flutter.embedding.android.FlutterActivity
 
