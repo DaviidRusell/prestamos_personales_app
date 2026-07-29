@@ -13,8 +13,14 @@ class RequirementsScreen extends StatelessWidget {
   ];
 
   static const _ranges = [
-    ('Monto', '\$100.000 – \$10.000.000 COP (referencial, varía según la entidad)'),
-    ('Plazo', 'Desde 60 hasta 120 días (referencial, varía según la entidad)'),
+    (
+      'Monto',
+      '\$100.000 – \$10.000.000 COP (referencial, varía según la entidad)'
+    ),
+    (
+      'Plazo',
+      'Desde 2 meses hasta 12 meses (referencial, varía según la entidad)'
+    ),
     ('Tiempo de respuesta', 'Generalmente entre minutos y algunas horas'),
   ];
 
@@ -25,7 +31,8 @@ class RequirementsScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          Text('Requisitos generales', style: Theme.of(context).textTheme.titleMedium),
+          Text('Requisitos generales',
+              style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 12),
           ..._requirements.map(
             (r) => Padding(
@@ -33,7 +40,8 @@ class RequirementsScreen extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(Icons.check_circle, color: AppTheme.primary, size: 20),
+                  const Icon(Icons.check_circle,
+                      color: AppTheme.primary, size: 20),
                   const SizedBox(width: 10),
                   Expanded(child: Text(r)),
                 ],
@@ -41,7 +49,8 @@ class RequirementsScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          Text('Rangos habituales', style: Theme.of(context).textTheme.titleMedium),
+          Text('Rangos habituales',
+              style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 12),
           ..._ranges.map(
             (item) => Card(
@@ -52,7 +61,8 @@ class RequirementsScreen extends StatelessWidget {
                 side: BorderSide(color: Colors.grey.shade200),
               ),
               child: ListTile(
-                title: Text(item.$1, style: const TextStyle(fontWeight: FontWeight.w600)),
+                title: Text(item.$1,
+                    style: const TextStyle(fontWeight: FontWeight.w600)),
                 subtitle: Text(item.$2),
               ),
             ),

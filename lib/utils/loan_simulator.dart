@@ -18,7 +18,8 @@ class LoanInstallment {
 class LoanSimulation {
   final double montoSolicitado;
   final int numeroCuotas;
-  final double tasaEfectivaAnual; // ej: 0.18 = 18% E.A., aleatoria entre 0% y 36%
+  final double
+      tasaEfectivaAnual; // ej: 0.18 = 18% E.A., aleatoria entre 0% y 36%
   final double tasaMensualEquivalente;
   final double totalAPagar;
   final double valorPorCuota;
@@ -41,7 +42,7 @@ class LoanSimulation {
 
 class LoanSimulator {
   static const double kMinTasaEA = 0.0; // 0%
-  static const double kMaxTasaEA = 0.36; // 36%
+  static const double kMaxTasaEA = 0.35; // 36%
 
   static final Random _random = Random();
 
@@ -61,7 +62,8 @@ class LoanSimulator {
     final year = date.year + ((totalMonth - 1) ~/ 12);
     final month = ((totalMonth - 1) % 12) + 1;
     final lastDayOfTargetMonth = DateTime(year, month + 1, 0).day;
-    final day = date.day > lastDayOfTargetMonth ? lastDayOfTargetMonth : date.day;
+    final day =
+        date.day > lastDayOfTargetMonth ? lastDayOfTargetMonth : date.day;
     return DateTime(year, month, day);
   }
 
