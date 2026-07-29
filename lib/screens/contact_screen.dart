@@ -27,7 +27,6 @@ class _ContactScreenState extends State<ContactScreen> {
 
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      // TODO: aquí conectarías con tu backend / CRM real para procesar la solicitud.
       setState(() => _submitted = true);
     }
   }
@@ -77,23 +76,30 @@ class _ContactScreenState extends State<ContactScreen> {
           const SizedBox(height: 20),
           TextFormField(
             controller: _nameController,
-            decoration: const InputDecoration(labelText: 'Nombre completo', border: OutlineInputBorder()),
-            validator: (v) => (v == null || v.trim().isEmpty) ? 'Ingresa tu nombre' : null,
+            decoration: const InputDecoration(
+                labelText: 'Nombre completo', border: OutlineInputBorder()),
+            validator: (v) =>
+                (v == null || v.trim().isEmpty) ? 'Ingresa tu nombre' : null,
           ),
           const SizedBox(height: 14),
           TextFormField(
             controller: _phoneController,
             keyboardType: TextInputType.phone,
-            decoration: const InputDecoration(labelText: 'Número de celular', border: OutlineInputBorder()),
-            validator: (v) => (v == null || v.trim().length < 7) ? 'Ingresa un número válido' : null,
+            decoration: const InputDecoration(
+                labelText: 'Número de celular', border: OutlineInputBorder()),
+            validator: (v) => (v == null || v.trim().length < 7)
+                ? 'Ingresa un número válido'
+                : null,
           ),
           const SizedBox(height: 14),
           TextFormField(
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
-            decoration: const InputDecoration(labelText: 'Correo electrónico', border: OutlineInputBorder()),
-            validator: (v) =>
-                (v == null || !v.contains('@')) ? 'Ingresa un correo válido' : null,
+            decoration: const InputDecoration(
+                labelText: 'Correo electrónico', border: OutlineInputBorder()),
+            validator: (v) => (v == null || !v.contains('@'))
+                ? 'Ingresa un correo válido'
+                : null,
           ),
           const SizedBox(height: 14),
           TextFormField(
@@ -103,10 +109,12 @@ class _ContactScreenState extends State<ContactScreen> {
               labelText: 'Monto que necesitas (COP)',
               border: OutlineInputBorder(),
             ),
-            validator: (v) => (v == null || v.trim().isEmpty) ? 'Ingresa un monto' : null,
+            validator: (v) =>
+                (v == null || v.trim().isEmpty) ? 'Ingresa un monto' : null,
           ),
           const SizedBox(height: 24),
-          ElevatedButton(onPressed: _submit, child: const Text('Enviar solicitud')),
+          ElevatedButton(
+              onPressed: _submit, child: const Text('Enviar solicitud')),
         ],
       ),
     );

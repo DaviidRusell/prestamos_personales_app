@@ -20,7 +20,8 @@ class LoanSimulatorScreen extends StatelessWidget {
       montoSolicitado: montoSolicitado,
       meses: meses,
     );
-    final currency = NumberFormat.currency(locale: 'es_CO', symbol: '\$', decimalDigits: 0);
+    final currency =
+        NumberFormat.currency(locale: 'es_CO', symbol: '\$', decimalDigits: 0);
     final dateFormat = DateFormat('d MMMM yyyy', 'es_CO');
 
     return Scaffold(
@@ -31,17 +32,25 @@ class LoanSimulatorScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: AppTheme.primary.withOpacity(0.06),
+              color: AppTheme.primary.withValues(alpha: 0.06),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppTheme.primary.withOpacity(0.25)),
+              border:
+                  Border.all(color: AppTheme.primary.withValues(alpha: 0.25)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _SimRow(label: 'Monto solicitado', value: currency.format(sim.montoSolicitado)),
-                _SimRow(label: 'Fecha de solicitud', value: dateFormat.format(sim.fechaSolicitud)),
-                _SimRow(label: 'Fecha del primer pago', value: dateFormat.format(sim.fechaPrimerPago)),
-                _SimRow(label: 'Número de cuotas', value: '${sim.numeroCuotas}'),
+                _SimRow(
+                    label: 'Monto solicitado',
+                    value: currency.format(sim.montoSolicitado)),
+                _SimRow(
+                    label: 'Fecha de solicitud',
+                    value: dateFormat.format(sim.fechaSolicitud)),
+                _SimRow(
+                    label: 'Fecha del primer pago',
+                    value: dateFormat.format(sim.fechaPrimerPago)),
+                _SimRow(
+                    label: 'Número de cuotas', value: '${sim.numeroCuotas}'),
                 _SimRow(
                   label: 'Tasa de interés efectiva anual (E.A.)',
                   value: '${(sim.tasaEfectivaAnual * 100).toStringAsFixed(1)}%',
@@ -61,7 +70,8 @@ class LoanSimulatorScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          Text('Plan de pago estimado', style: Theme.of(context).textTheme.titleMedium),
+          Text('Plan de pago estimado',
+              style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 10),
           Card(
             elevation: 0,
@@ -75,10 +85,11 @@ class LoanSimulatorScreen extends StatelessWidget {
                   dense: true,
                   leading: CircleAvatar(
                     radius: 14,
-                    backgroundColor: AppTheme.primary.withOpacity(0.12),
+                    backgroundColor: AppTheme.primary.withValues(alpha: 0.12),
                     child: Text(
                       '${cuota.numero}',
-                      style: const TextStyle(fontSize: 12, color: AppTheme.primaryDark),
+                      style: const TextStyle(
+                          fontSize: 12, color: AppTheme.primaryDark),
                     ),
                   ),
                   title: Text('Cuota ${cuota.numero}'),
@@ -116,7 +127,8 @@ class LoanSimulatorScreen extends StatelessWidget {
             children: [
               Expanded(
                 child: OutlinedButton(
-                  onPressed: () => Navigator.of(context).popUntil((r) => r.isFirst),
+                  onPressed: () =>
+                      Navigator.of(context).popUntil((r) => r.isFirst),
                   child: const Text('No, volver'),
                 ),
               ),
@@ -144,7 +156,8 @@ class _SimRow extends StatelessWidget {
   final String value;
   final bool emphasize;
 
-  const _SimRow({required this.label, required this.value, this.emphasize = false});
+  const _SimRow(
+      {required this.label, required this.value, this.emphasize = false});
 
   @override
   Widget build(BuildContext context) {

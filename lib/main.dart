@@ -15,7 +15,7 @@ class InfoCreditoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Info Crédito', // TODO: reemplaza por el nombre real de tu marca
+      title: 'Prestamos Rapidos Colombia',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
       home: const MainNavigation(),

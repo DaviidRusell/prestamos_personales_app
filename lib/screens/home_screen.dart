@@ -47,7 +47,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) => const QuestionnaireScreen()),
+                      MaterialPageRoute(
+                          builder: (_) => const QuestionnaireScreen()),
                     );
                   },
                   child: const Text('Solicitar préstamo'),
@@ -56,7 +57,8 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          Text('¿Por qué usar este comparador?', style: Theme.of(context).textTheme.titleMedium),
+          Text('¿Por qué usar este comparador?',
+              style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 12),
           const _FeatureTile(
             icon: Icons.speed,
@@ -71,7 +73,8 @@ class HomeScreen extends StatelessWidget {
           const _FeatureTile(
             icon: Icons.lock_outline,
             title: 'Datos protegidos',
-            subtitle: 'Tu información se usa únicamente para gestionar tu solicitud.',
+            subtitle:
+                'Tu información se usa únicamente para gestionar tu solicitud.',
           ),
           const _FeatureTile(
             icon: Icons.money_off,
@@ -104,7 +107,8 @@ class _FeatureTile extends StatelessWidget {
   final String title;
   final String subtitle;
 
-  const _FeatureTile({required this.icon, required this.title, required this.subtitle});
+  const _FeatureTile(
+      {required this.icon, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +122,7 @@ class _FeatureTile extends StatelessWidget {
       ),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: AppTheme.primary.withOpacity(0.1),
+          backgroundColor: AppTheme.primary.withValues(alpha: 0.1),
           child: Icon(icon, color: AppTheme.primary),
         ),
         title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),

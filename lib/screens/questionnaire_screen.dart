@@ -146,7 +146,9 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 18),
             decoration: BoxDecoration(
-              color: selected ? AppTheme.primary.withOpacity(0.08) : Colors.white,
+              color: selected
+                  ? AppTheme.primary.withValues(alpha: 0.08)
+                  : Colors.white,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: selected ? AppTheme.primary : Colors.grey.shade300,
@@ -160,8 +162,10 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                     question.options[i],
                     style: TextStyle(
                       fontSize: 16,
-                      fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
-                      color: selected ? AppTheme.primaryDark : AppTheme.textDark,
+                      fontWeight:
+                          selected ? FontWeight.w600 : FontWeight.normal,
+                      color:
+                          selected ? AppTheme.primaryDark : AppTheme.textDark,
                     ),
                   ),
                 ),

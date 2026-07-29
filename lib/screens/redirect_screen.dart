@@ -7,7 +7,7 @@ import '../theme/app_theme.dart';
 class RedirectScreen extends StatelessWidget {
   const RedirectScreen({super.key});
 
-  // TODO: si en el futuro el enlace depende del perfil del usuario,
+  // TODO: ENLACE DE OFERTA CPA,
   // reemplaza esta constante por un valor calculado a partir de las respuestas.
   static const String _entityUrl =
       'https://7aab2.bemobtrcks.com/go/7ba27b58-faa0-458c-b504-d95fc41e7d45';
@@ -17,7 +17,8 @@ class RedirectScreen extends StatelessWidget {
     final opened = await launchUrl(uri, mode: LaunchMode.externalApplication);
     if (!opened && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No fue posible abrir el enlace. Intenta de nuevo.')),
+        const SnackBar(
+            content: Text('No fue posible abrir el enlace. Intenta de nuevo.')),
       );
     }
   }
@@ -31,7 +32,8 @@ class RedirectScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.handshake_outlined, size: 64, color: AppTheme.primary),
+            const Icon(Icons.handshake_outlined,
+                size: 64, color: AppTheme.primary),
             const SizedBox(height: 20),
             Text(
               'Te estamos dirigiendo con la entidad que mejor se ajusta a tu perfil crediticio',
